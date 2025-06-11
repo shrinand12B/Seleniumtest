@@ -28,4 +28,13 @@ pipeline {
             }
         }
     }
+    post {
+        always {
+            publishHTML(target: [
+                reportDir: 'test-output',
+                reportFiles: 'extent-report.html',
+                reportName: 'Extent Report'
+            ])
+        }
+    }
 }
